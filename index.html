@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Lista de Tareas</h1>
+
+    <main>
+
+      <section id="sectionForm">
+
+        <!-- /*********************************
+                    * FORMULARIO
+         **********************************/ -->
+        <div class="tareasList">
+          <form>
+            <input type="text" placeholder="Agregar titulo" id="tituloTarea">
+            <input type="text" placeholder="Agregar tarea..." id="tarea">
+
+            <select name="" id="">
+              <option value="azul">a</option>
+              <option value="amarillo">am</option>
+              <option value="rojo">r</option>
+            </select>
+
+            <button class="btn-add">+</button>
+          </form>
+        </div>
+
+      </section>
+
+      <!-- /*********************************
+           * SECTION TAREAS
+     **********************************/ -->
+      <section id="sectionTareas">
+        <div class="tareas">
+
+        </div>
+        <div class="empty">
+          <p>No tienes tareas pendientes...</p>
+        </div>
+
+      </section>
+    </main>
+
+  </div>
+
+  <!-- /*********************************
+          * TEMPLATE
+   **********************************/ -->
+  <template>
+    <div class="tareasCard">
+      <button class="delete">x</button>
+      <h3>Titulo</h3>
+      <div class="tareasCardBody">
+        <p class="tareasPCard">Lorem
+          voluptatum ullam magni quidem natus beatae nihil. </p>
+      </div>
+    </div>
+  </template>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

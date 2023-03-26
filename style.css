@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background-color: lightgreen;
+  color: #0e0d0d;
+  box-sizing: border-box;
+}
+
+/*********************************
+* 
+**********************************/
+h1 {
+  text-align: center;
+  color: #000;
+  border: 1px solid red;
+  padding: 0;
+  margin-top: 0;
+}
+
+.container {
+  width: 90%;
+  background-color: #fff;
+  margin: 0 auto;
+  height: 100vh;
+  /*   padding: 30px;
+  margin: 30px auto; */
+  /*  border: 10px solid rgb(219, 242, 14); */
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 5px solid rgb(115, 0, 255);
+}
+
+/*********************************
+* SECTION DEL FORMULARIO
+**********************************/
+#sectionForm {
+  width: 30%;
+  border: 5px solid rgb(14, 11, 17);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  padding: 15px 10px;
+  width: 90%;
+  outline: none;
+}
+
+.btn-add {
+  padding: 5px 15px;
+  color: #fff;
+  background-color: #008080;
+  font-family: fantasy;
+  border: none;
+  font-size: 1.4rm;
+  outline: none;
+  border-radius: 5%;
+}
+
+.btn-add:hover {
+  cursor: pointer;
+  background-color: #20b2aa;
+}
+
+/*********************************
+* TEMPLATE Y MSN DE VACIO
+**********************************/
+#sectionTareas {
+  width: 60%;
+  border: 5px solid rgb(14, 9, 20);
+  align-items: center;
+}
+
+/*********************************
+* CONTENEDOR PRINCIPAL D TAREAS
+**********************************/
+.tareas {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  flex-grow: 1;
+  gap: 10px;
+
+  border: 1px solid red;
+
+  /*  align-items: center; */
+}
+
+.empty {
+  color: #2f4f4f;
+}
+
+.toggle {
+  display: none;
+}
+
+/*********************************
+* TEMPLATE
+**********************************/
+.tareasCard {
+  border: 2px solid rgb(111, 218, 50);
+  width: 48%;
+  position: relative;
+}
+
+.delete {
+  width: 14px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+/*********************************
+* QUERIES
+**********************************/
+@media (max-width: 700px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
+  }
+  #sectionForm {
+    width: 100%;
+  }
+
+  #sectionTareas {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .tareasCard {
+    width: 90%;
+  }
+  .tareas {
+    justify-content: center;
+  }
+}
