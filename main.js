@@ -1,10 +1,12 @@
 const inputTitulo = document.querySelector("#tituloTarea");
 const inputTarea = document.querySelector("#tarea");
 const importancia = document.querySelector("#select");
-const addBtn = document.querySelector(".btn-add");
+const addBtn = document.querySelector("#agregar");
+const removeAllBtn = document.querySelector("#borrarTodo");
 const empty = document.querySelector(".empty");
 const tareas = document.querySelector(".tareas");
 const template = document.querySelector("template").content;
+const crearPDF = document.querySelector("#crearPDF");
 const fragment = new DocumentFragment();
 let tareaArray = [];
 
@@ -80,3 +82,36 @@ const eliminarTarea = (e) => {
 /*********************************
  * ELIMINAR TAREAS TODAS
  **********************************/
+removeAllBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (confirm("¿Vas a eliminar todas las tareas?")) {
+    tareaArray.length = 0;
+    pintarTareas();
+    console.log("tareaArray: ", tareaArray);
+  }
+});
+
+/*********************************
+ *CREAR PDF
+ **********************************/
+crearPDF.addEventListener("click", (e) => {
+  e.preventDefault();
+  /* UNA FORMA:
+  window.print(); */
+
+  /* OTRA FORMA
+  var mywindow = window.open("", "PRINT", "height=400,width=600");
+    mywindow.print();
+    mywindow.close(); */
+
+  //OTRA
+  let impContenidos = document.querySelector("#sectionTareas").innerHTML;
+
+  w = window.open();
+  w.document.write(impContenidos);
+  w.document.close(); // necessary for IE >= 10
+  w.focus(); // necessary for IE >= 10
+  w.print();
+  w.close();
+});

@@ -13,7 +13,7 @@
 
   <div class="container">
     <h1>Trello</h1>
-
+    <button id="crearPDF">PDF</button>
     <main>
 
       <section id="sectionForm">
@@ -34,7 +34,11 @@
               <option value="#ff0000" class="rojo">Urgente</option>
             </select>
 
-            <button class="btn-add">Añadir</button>
+            <div class="formbtnContent">
+              <button class="btn-add" id="agregar">Añadir</button>
+              <button class="btn-delete" id="borrarTodo">Eliminar todo</button>
+
+            </div>
           </form>
         </div>
 
@@ -47,6 +51,7 @@
         <div class="tareas">
 
         </div>
+
         <div class="empty">
           <p>No tienes tareas pendientes...</p>
         </div>

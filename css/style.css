@@ -1,4 +1,6 @@
 @import url(inputs.css);
+@import url(pdf.css);
+
 body {
   margin: 0;
   padding: 0;
@@ -26,6 +28,7 @@ h1 {
 }
 
 .container {
+  position: relative;
   width: 90%;
   background-color: #fff;
   margin: 0 auto;
@@ -64,6 +67,14 @@ form {
   justify-content: center;
 }
 
+.formbtnContent {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  width: 109%;
+  /* border: 1px solid black; */
+}
+
 .btn-add {
   padding: 5px 15px;
   color: #fff;
@@ -81,6 +92,20 @@ form {
   background-color: #2241de;
 }
 
+.btn-delete {
+  padding: 5px 15px;
+  color: #fff;
+  background-color: #ff0000;
+  width: 50%;
+  border: none;
+  outline: none;
+  border-radius: 5%;
+}
+
+.btn-delete:hover {
+  cursor: pointer;
+  background-color: #d33d3d;
+}
 /*********************************
 * TEMPLATE Y MSN DE VACIO
 **********************************/
