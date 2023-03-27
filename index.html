@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Lista Tareas</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
   <div class="container">
-    <h1>Lista de Tareas</h1>
+    <h1>Trello</h1>
 
     <main>
 
@@ -24,15 +24,17 @@
         <div class="tareasList">
           <form>
             <input type="text" placeholder="Agregar titulo" id="tituloTarea">
-            <input type="text" placeholder="Agregar tarea..." id="tarea">
 
-            <select name="" id="">
-              <option value="azul">a</option>
-              <option value="amarillo">am</option>
-              <option value="rojo">r</option>
+            <textarea rows="4" cols="30" id="tarea" placeholder="Agregar tarea..."></textarea>
+
+            <select name="selectColor" id="select">
+              <option value="" selected>Prioridad de la tarea</option>
+              <option value="#007bff" class="azul">Sin apuro</option>
+              <option value="#ffff00" class="amarillo">plazo mediano</option>
+              <option value="#ff0000" class="rojo">Urgente</option>
             </select>
 
-            <button class="btn-add">+</button>
+            <button class="btn-add">Añadir</button>
           </form>
         </div>
 
@@ -61,6 +63,7 @@
     <div class="tareasCard">
       <button class="delete">x</button>
       <h3>Titulo</h3>
+      <span class="tareaColor"></span>
       <div class="tareasCardBody">
         <p class="tareasPCard">Lorem
           voluptatum ullam magni quidem natus beatae nihil. </p>

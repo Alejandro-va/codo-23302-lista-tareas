@@ -1,10 +1,14 @@
+@import url(inputs.css);
 body {
   margin: 0;
   padding: 0;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  background-color: lightgreen;
+  /* background-color: #007bff; */
+  background-image: url(../img/jahz.png);
+  background-repeat: repeat;
+  background-size: 8%;
   color: #0e0d0d;
   box-sizing: border-box;
 }
@@ -15,9 +19,10 @@ body {
 h1 {
   text-align: center;
   color: #000;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 0;
   margin-top: 0;
+  border-bottom: 3px solid #dbdcde;
 }
 
 .container {
@@ -27,7 +32,11 @@ h1 {
   height: 100vh;
   /*   padding: 30px;
   margin: 30px auto; */
-  /*  border: 10px solid rgb(219, 242, 14); */
+  /* border: 10px solid rgb(219, 242, 14); */
+
+  box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.75);
 }
 
 main {
@@ -36,7 +45,7 @@ main {
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  border: 5px solid rgb(115, 0, 255);
+  /* border: 5px solid rgb(115, 0, 255); */
 }
 
 /*********************************
@@ -44,7 +53,9 @@ main {
 **********************************/
 #sectionForm {
   width: 30%;
-  border: 5px solid rgb(14, 11, 17);
+  /* border: 5px solid rgb(14, 11, 17); */
+  display: flex;
+  justify-content: center;
 }
 
 form {
@@ -53,26 +64,21 @@ form {
   justify-content: center;
 }
 
-input {
-  padding: 15px 10px;
-  width: 90%;
-  outline: none;
-}
-
 .btn-add {
   padding: 5px 15px;
   color: #fff;
-  background-color: #008080;
-  font-family: fantasy;
+  background-color: #007bff;
+  width: 50%;
+
   border: none;
-  font-size: 1.4rm;
+  /*   font-size: 1rem; */
   outline: none;
   border-radius: 5%;
 }
 
 .btn-add:hover {
   cursor: pointer;
-  background-color: #20b2aa;
+  background-color: #2241de;
 }
 
 /*********************************
@@ -80,7 +86,7 @@ input {
 **********************************/
 #sectionTareas {
   width: 60%;
-  border: 5px solid rgb(14, 9, 20);
+  /* border: 5px solid rgb(14, 9, 20); */
   align-items: center;
 }
 
@@ -95,13 +101,16 @@ input {
   flex-grow: 1;
   gap: 10px;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   /*  align-items: center; */
 }
 
 .empty {
   color: #2f4f4f;
+  /* border: 1px solid red; */
+  text-align: center;
+  font-weight: bold;
 }
 
 .toggle {
@@ -112,9 +121,13 @@ input {
 * TEMPLATE
 **********************************/
 .tareasCard {
-  border: 2px solid rgb(111, 218, 50);
-  width: 48%;
+  width: 45%;
   position: relative;
+  padding: 0.5rem;
+
+  box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.75);
 }
 
 .delete {
@@ -122,8 +135,18 @@ input {
   position: absolute;
   right: 10px;
   top: 10px;
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
+.tareaColor {
+  position: absolute;
+  top: 10px;
+  width: 80%;
+  height: 10px;
+}
 /*********************************
 * QUERIES
 **********************************/
@@ -133,10 +156,21 @@ input {
     align-items: center;
     gap: 20px 0;
   }
+  .container {
+    min-height: 100vh;
+    height: auto;
+  }
   #sectionForm {
-    width: 100%;
+    width: 80%;
   }
 
+  #select {
+    width: 105%;
+  }
+
+  .tareasList {
+    width: 90%;
+  }
   #sectionTareas {
     width: 100%;
   }

@@ -1,15 +1,12 @@
 const inputTitulo = document.querySelector("#tituloTarea");
 const inputTarea = document.querySelector("#tarea");
+const importancia = document.querySelector("#select");
 const addBtn = document.querySelector(".btn-add");
 const empty = document.querySelector(".empty");
 const tareas = document.querySelector(".tareas");
 const template = document.querySelector("template").content;
 const fragment = new DocumentFragment();
 let tareaArray = [];
-
-document.querySelector("DOMContentLoaded", () => {
-  // if (tareaArray.length == 0) empty.classList.remove("toggle");
-});
 
 /*********************************
  *BTN ACCION DEL FORMULARIO
@@ -19,21 +16,28 @@ addBtn.addEventListener("click", (e) => {
 
   const valor1 = inputTitulo.value;
   const valor2 = inputTarea.value;
+  const valor3 = importancia.value;
 
   //--VALIDACION DE LOS INPUT
-  if (valor1 == "" || valor2 == "") return alert("faltan valores");
+  if (valor1 == "" || valor2 == "" || valor3 == "")
+    return alert("faltan valores");
 
   const contenido = {
     id: Date.now(),
     inputTitulo: valor1,
     inputTarea: valor2,
+    importancia: valor3,
   };
-
+  //console.log(contenido.importancia);
   tareaArray.push(contenido);
+
   pintarTareas();
 
-  inputTitulo.value = "";
+  console.log("tareaArray: ", tareaArray);
+  /*   inputTitulo.value = "";
   inputTarea.value = "";
+; */
+  document.querySelector("form").reset();
 });
 
 /*********************************
@@ -47,6 +51,7 @@ const pintarTareas = () => {
     const clone = template.cloneNode(true);
     clone.querySelector("h3").textContent = el.inputTitulo;
     clone.querySelector(".tareasPCard").textContent = el.inputTarea;
+    clone.querySelector(".tareaColor").style.backgroundColor = el.importancia;
     clone.querySelector(".delete").dataset.id = el.id;
     clone.querySelector(".delete").addEventListener("click", eliminarTarea);
     fragment.appendChild(clone);
@@ -71,3 +76,7 @@ const eliminarTarea = (e) => {
   // console.log("tareaArray: ", tareaArray);
   // console.log(tareaArray.length);
 };
+
+/*********************************
+ * ELIMINAR TAREAS TODAS
+ **********************************/
